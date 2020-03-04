@@ -9,7 +9,6 @@ integration:
       - ./app/build/outputs/apk/*/*
     expire_in: 1 month
   only:
-    - /^release.*$/
     - master
 
 
@@ -24,6 +23,5 @@ release:
       - ./app/build/outputs/apk/*/*
     expire_in: 1 month
   only:
-    - /^release.*$/
     - master
 
