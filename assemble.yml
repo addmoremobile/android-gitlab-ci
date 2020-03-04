@@ -1,0 +1,11 @@
+
+  stage: build
+  script:
+    - ./gradlew clean ${ASSEMBLE_VARIABLE}
+  when: manual
+  artifacts:
+    when: on_success
+    paths:
+      - ./app/build/outputs/apk/*/*
+    expire_in: 1 month
+
