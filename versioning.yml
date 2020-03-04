@@ -1,0 +1,34 @@
+versioning:
+  stage: versioning
+  image: registry.gitlab.com/juhani/go-semrel-gitlab:v0.21.1
+  script:
+    - release next-version > .next-version
+  artifacts:
+    paths:
+      - .next-version
+  only:
+    - develop
+
+
+createVersion:
+  stage: createVersion
+  dependencies:
+    - versioning
+  script:
+    - ./gradlew versioning
+  artifacts:
+    paths:
+      - version.properties
+  only:
+    - develop
+
+tag:
+  stage: tag
+  image: registry.gitlab.com/juhani/go-semrel-gitlab:v0.21.1
+  dependencies:
+    - createVersion
+  script:
+    - release commit-and-tag version.properties
+  only:
+    - develop
+
