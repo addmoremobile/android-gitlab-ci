@@ -1,7 +1,7 @@
 integration:
   stage: build
   script:
-    - ./gradlew clean ${INTEGRATION_VARIABLE}
+    - ./gradlew clean assembleIntegrationRelease
   when: manual
   artifacts:
     when: on_success
@@ -16,7 +16,7 @@ integration:
 release:
   stage: build
   script:
-    - ./gradlew clean ${PRODUCTION_VARIABLE}
+    - ./gradlew clean assembleProductionRelease
   when: manual
   artifacts:
     when: on_success
