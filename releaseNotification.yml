@@ -1,0 +1,10 @@
+sendNotification:
+  stage: releaseNotification
+  image: technosophos/slack-notify
+  dependencies:
+    - versioning
+  script:
+    - export SLACK_MESSAGE="Project <$CI_PROJECT_URL/-/releases|$CI_PROJECT_PATH> bumped to version $(<.next-version)"
+    - /slack-notify
+  only:
+    - develop
