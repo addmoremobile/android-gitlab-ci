@@ -1,4 +1,4 @@
-integration:
+preprod:
   stage: build
   script:
     - ./gradlew clean ${PRE_PRODUCTION_VARIABLE}
