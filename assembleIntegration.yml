@@ -10,3 +10,4 @@ integration:
     expire_in: 1 month
   only:
     - master
+    - /^release\/.*/
