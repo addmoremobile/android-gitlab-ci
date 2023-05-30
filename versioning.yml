@@ -12,7 +12,6 @@ versioning:
 
 createVersion:
   stage: createVersion
-  image: registry.gitlab.com/juhani/go-semrel-gitlab:v0.21.1
   dependencies:
     - versioning
   script:
