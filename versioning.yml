@@ -12,6 +12,7 @@ versioning:
 
 createVersion:
   stage: createVersion
+  image: openjdk:17-oracle
   dependencies:
     - versioning
   script:
