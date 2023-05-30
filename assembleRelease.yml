@@ -1,7 +1,7 @@
 
 release:
   stage: build
-  image: gradle:jdk16
+  image: gradle:jdk17-alpine
   script:
     - ./gradlew clean ${PRODUCTION_VARIABLE}
   when: manual
