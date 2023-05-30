@@ -12,7 +12,7 @@ versioning:
 
 createVersion:
   stage: createVersion
-  image: openjdk:17-oracle
+  image: gradle:jdk16
   dependencies:
     - versioning
   script:
