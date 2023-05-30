@@ -1,6 +1,7 @@
 
 release:
   stage: build
+  image: gradle:jdk16
   script:
     - ./gradlew clean ${PRODUCTION_VARIABLE}
   when: manual
